@@ -1,0 +1,39 @@
+.footer{
+    background-color: #000000;
+    padding-bottom: 15px;
+    
+}
+.foot__text{
+color: #ffffff;
+padding-top: 20px;
+
+
+}
+.footerin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.foot__web{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+
+}
+.foot__address{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+;
+}
+.web_inst{
+    margin-right: 15px;
+}
+.foot__web-social{
+margin-top: 10px;
+}
+.foot__info{
+    margin-left: 40px;
+}

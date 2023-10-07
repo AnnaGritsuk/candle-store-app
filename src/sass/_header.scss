@@ -1,0 +1,30 @@
+.header{
+    background-color: black;
+    height: 62px;
+
+}
+.container{
+    width: 1370px;
+    margin: auto;
+
+}
+.headin{
+display: flex;
+align-items: center;
+justify-content: space-between;
+a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 35px;
+}
+padding-top: 10px;
+}
+.nav_katalog{
+    margin-right: 50px;
+    margin-left: 40px;
+}
+
+.nav_user{
+    margin-right: 40px;
+    margin-left: 50px;
+}
