@@ -23,7 +23,7 @@ constructor(parrent: HTMLElement) {
     new Component (web.root, 'p', ["foot__text"], "Следите за нами в соцсетях:");
     
     const web_social = new Component (web.root,'div', ["foot__web-social"]);
-    const web_inst = new Component (web_social.root, 'a', ["web_inst"], null,["href"],["#"]);
+    const web_inst = new Component (web_social.root, 'a', ["web_inst"], null,["href"],["https://www.instagram.com/candlik.by/"]);
     new Component (web_inst.root, 'img', null , null, ["src", "alt"],["./assets/inst.png", "inst"]);
 
     const web_tg = new Component (web_social.root, 'a', ["web_tg"], null,["href"],["#"]);
