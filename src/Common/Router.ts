@@ -1,5 +1,6 @@
-// import { getAuth } from "firebase/auth";
+
 import { Component } from "../Abstract/Component";
+import { getAuth } from "firebase/auth";
 
 export class Router {
   constructor(public links: Record<string, Component>) {
@@ -15,14 +16,13 @@ export class Router {
 
     const url = window.location.hash.slice(1);
 
-    this.links ["#" + url].render();
-    // const auth = getAuth();
-    // const user = auth.currentUser;
+    const auth = getAuth();
+   const user = auth.currentUser;
 
-    // if (url === 'reviews' && !user) {
-    //   this.links['#authorization'].render();
-    // } else {
-    //   this.links['#' + url].render();
-    // }
+    if (url === 'user' && !user) {
+      this.links['#autorization'].render();
+    } else {
+      this.links['#' + url].render();
+    }
   }
 }

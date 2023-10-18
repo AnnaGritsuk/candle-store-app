@@ -10,8 +10,13 @@ import { Otzivi } from './Pages/Otzivi';
 import { Statistika } from './Pages/Statistika';
 import { Router } from './Common/Router';
 import { User } from './Pages/User';
+import { Autorization } from './Pages/Autorization';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../configFB";
 
 const body = document.body;
+initializeApp(firebaseConfig);
 class App{
   constructor(parrent: HTMLElement){
     const wrap = new Component(body, 'div', ["wrapper"]);
@@ -26,6 +31,7 @@ class App{
       "#otzivi": new Otzivi(main.root),
       "#statistika": new Statistika(main.root),
       "#user": new User(main.root),
+      "#autorization": new Autorization(main.root),
     }
     new Router(links);
     new Footer(wrap.root);
@@ -41,4 +47,8 @@ declare global {
   }
 }
 
-window.app=new App(document.body);
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+  if (!window.app) window.app = new App(document.body);
+}
+)
