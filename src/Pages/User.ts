@@ -1,12 +1,13 @@
 import { getAuth, signOut } from "firebase/auth";
 import { Component } from "../Abstract/Component";
+import { TServices } from "../Abstract/Types";
 
 
 
 export class User extends Component {
   
   outButton: Component;
-  constructor(parrent: HTMLElement) {
+  constructor(parrent: HTMLElement, private services: TServices) {
     super(parrent, "div", ["user"]);
     const container = new Component(this.root, 'div', ["container"]);
     new Component(container.root, 'h1', null, "Ваш аккаунт");

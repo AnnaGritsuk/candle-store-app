@@ -1,9 +1,10 @@
 
 import { Component } from "../Abstract/Component";
 import { getAuth } from "firebase/auth";
+import { TServices } from "../Abstract/Types";
 
 export class Router {
-  constructor(public links: Record<string, Component>) {
+  constructor(public links: Record<string, Component>, private services: TServices) {
     this.openPage();
 
     window.onhashchange = () => {
@@ -16,8 +17,7 @@ export class Router {
 
     const url = window.location.hash.slice(1);
 
-    const auth = getAuth();
-   const user = auth.currentUser;
+    const user = this.services.authService.user;
 
     if (url === 'user' && !user) {
       this.links['#autorization'].render();
